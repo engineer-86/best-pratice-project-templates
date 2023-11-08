@@ -1,0 +1,11 @@
+# Use IDE plugin for generate suitable dockerignore for your stack!
+# NEVER BUILD A CONTAINER WITHOUT .dockerignore!
+
+# Jetbrains IDE (PyCharm etc.):
+# Right click on project folder --> NEW --> .ignore File --> .dockerignore
+# choose your stack
+
+# VS Code:
+# dockerignore plugins or github sources
+
+# Think about your project, add usefule ignores!

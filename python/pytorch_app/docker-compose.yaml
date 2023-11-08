@@ -1,0 +1,21 @@
+version: "3.4"
+services:
+  app_name: #
+    # image: registry.gitlab.com/complexium/cx-radar:v0519 # you can use a image or build by context from DOCKERFILE
+    container_name: app_name
+    build:
+      context: . # context path to DOCKERFILE
+    env_file:
+      - .env # your .env with the credentails and control constants
+    volumes:
+      - ./resources:/root/.cache/huggingface/ # volume linked to host system
+    deploy:
+      resources: # gpu hardware
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    restart: always # restart policy
+

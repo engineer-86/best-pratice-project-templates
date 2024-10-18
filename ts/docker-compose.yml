@@ -1,0 +1,15 @@
+services:
+    app:
+        build: .
+        ports:
+            - '3000:3000'
+        environment:
+            - NODE_ENV=production
+            - PORT=3000
+            - DB_CONN_STRING=mongodb://mongo:27017
+            - DB_NAME=quest
+            - USER_COLLECTION=events
+            - QUEST_COLLECTION=events
+
+volumes:
+    mongo-data:
